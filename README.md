@@ -1,9 +1,18 @@
-﻿# Tralya  Uzak Masaüstü Altyapısı (Public Safe Package)
+﻿# Tralya — Public Safe Package
 
-Bu paket güvenli, sunucuya özel bilgi içermeyen örnek konfigürasyonlar ve belgeler içerir.
-Gerçek sertifikalar, .env dosyaları ve üretim yapılandırmaları buraya eklenmemelidir.
+Bu repo **güvenli örnekler** içerir. Üretim değerleri içermez.
 
-## Önemli Güvenlik Notları
-- Kesinlikle şu dosyaları public repo'ya yükmeyin:
-  - certs/, *.key, *.pem, .env, docker-compose.yml, nginx/nginx.conf, scripts/setup-production.ps1
-- Sertifikalar host üzerinde güvenli bir dizinde (ör. D:\secrets\tralya-certs) tutulmalı ve konteynıra read-only mount edilmelidir.
+## Ne var?
+- `docker-compose.sample.yml` — örnek servis tanımları. Gerçek sertifikalar ve gizliler repoya **konulmaz**.
+- `nginx/nginx-example.conf` — domain ve sertifika yolları placeholder’dır.
+- `docs/INSTALLATION.md` — kurulum notları.
+- `.gitignore`, `NOTICE`, `LICENSE`.
+
+## Güvenlik
+- Aşağıdakileri **asla** commit etme:
+  - `certs/`, `*.key`, `*.pem`, `.env`, `docker-compose.yml`, `nginx/nginx.conf`, `scripts/*production*.ps1`
+- Sertifikaları host’ta güvenli bir dizinde tut ve konteynıra **read-only** mount et.
+- Örnek domain `example.com`’dır. Üretimde kendi domainini kullan.
+
+## Çalıştırma (örnek)
+Host’ta:
