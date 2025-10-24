@@ -1,0 +1,17 @@
+﻿# Secrets
+.env
+.env.production
+certs/
+*.key
+*.pem
+
+# Local configs (do not commit production configs)
+docker-compose.yml
+nginx/nginx.conf
+scripts/setup-production.ps1
+
+# Logs / Build
+*.log
+dist/
+build/
+node_modules/
